@@ -1,0 +1,13 @@
+from fastapi import FastAPI
+
+from src.application.controllers import code_review_controllers
+
+
+app = FastAPI(
+    title="Code Review API",
+    description="Service for Code Review",
+    version="1.0.0"
+)
+
+
+app.include_router(code_review_controllers.router)
